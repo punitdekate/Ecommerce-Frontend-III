@@ -1,6 +1,5 @@
 import styles from "./orderDetails.module.css";
 import OrderDetailsItem from "../orderDetailsItem.js/orderDetailsItem";
-import orderImage from "../../../assets/tracking.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

@@ -2,6 +2,7 @@
   "name": "busy_buy_i",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://punitdekate.github.io/Ecommerce-Frontend-III",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.8",
     "@testing-library/jest-dom": "^5.17.0",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }

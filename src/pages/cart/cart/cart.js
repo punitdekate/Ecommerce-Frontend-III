@@ -7,12 +7,7 @@ import { getInitialCart } from "../../../redux/reducers/cart.reducer";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { cartSelector } from "../../../redux/reducers/cart.reducer";
-import { userSelector } from "../../../redux/reducers/user.reducer";
-import { start, end } from "../../../redux/reducers/loader.reducer";
-import { toast } from "react-toastify";
-import { placeOrderSelector } from "../../../redux/reducers/placeOrder.reducer";
 import { placeOrderThunk } from "../../../redux/reducers/placeOrder.reducer";
-import { reset } from "../../../redux/reducers/cart.reducer";
 
 function Cart() {
   const { cart } = useSelector(cartSelector);
