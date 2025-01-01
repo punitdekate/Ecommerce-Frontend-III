@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: "system-ui";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: "system-ui";
+}
+
+input {
+  font-family: "system-ui";
+}
+code {
+  font-family: "system-ui";
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  font-size: 1.5rem; /* Adjust font size */
+  font-weight: bold;
+  color: #555; /* Subtle text color */
+  background-color: #f9f9f9; /* Optional background color */
+}

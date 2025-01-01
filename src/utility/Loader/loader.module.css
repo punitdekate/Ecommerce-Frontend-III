@@ -1,0 +1,21 @@
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 4px solid rgba(0, 0, 0, 0.2); /* Light border */
+  border-top-color: black; /* Dark border for the spinning effect */
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  display: none; /* Disable the white background */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

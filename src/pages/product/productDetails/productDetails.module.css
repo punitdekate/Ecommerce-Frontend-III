@@ -1,0 +1,150 @@
+/* productDetails.module.css */
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.imageGallery {
+  flex: 1;
+  max-width: 50%;
+}
+
+.mainImage {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  flex: 1;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.tags {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.tag {
+  color: #007bff;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.quantityWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quantityLabel {
+  font-size: 1rem;
+}
+
+.quantityInput {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.addToCart {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.addToCart:hover {
+  background-color: #c0392b;
+}
+
+.shopNow {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.shopNow:hover {
+  background-color: #27ae60;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .imageGallery {
+    max-width: 100%;
+  }
+
+  .details {
+    max-width: 100%;
+  }
+}

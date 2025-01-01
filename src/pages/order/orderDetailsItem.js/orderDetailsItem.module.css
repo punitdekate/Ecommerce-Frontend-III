@@ -1,0 +1,45 @@
+.orderItemContainer {
+  width: 98%;
+  max-height: auto; /* Allow flexible height */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  flex-wrap: nowrap;
+  background-color: white;
+  padding: 1rem;
+  margin: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.orderItemImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.orderItemImage {
+  width: 100px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  color: #444;
+}

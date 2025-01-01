@@ -1,0 +1,80 @@
+.cartTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align content vertically in the center */
+  padding: 10px 20px; /* Add some padding */
+  background-color: #f9f9f9; /* Light background for better visibility */
+  border-bottom: 1px solid #e0e0e0; /* Optional: Add a border for separation */
+}
+
+.backIcon {
+  display: flex;
+  align-items: center; /* Center the icon vertically */
+  font-size: 20px; /* Make the icon size larger */
+  color: #007bff; /* Add a primary color */
+  cursor: pointer; /* Make the icon clickable */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.backIcon:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+.cartImageWrapper {
+  display: flex;
+  align-items: center; /* Center the image vertically */
+}
+
+.cartImage {
+  height: 40px; /* Adjust the size of the image */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.title {
+  padding: 10px;
+}
+.cartMainContainer,
+.cartTitleContainer,
+.cartTotalContainer {
+  width: 80%;
+  margin: auto;
+}
+.cartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.cartImage {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+}
+
+.placeOrderButton {
+  padding: 7px;
+  background-color: rgb(40, 174, 58);
+  font-weight: bold;
+  border-radius: 2px;
+  border: 1px solid black;
+  color: white;
+}
+
+.emptyCart {
+  height: 140px;
+  width: 140px;
+}
+
+@media (max-width: 768px) {
+  .cartMainContainer,
+  .cartTitleContainer {
+    width: 90%;
+  }
+}

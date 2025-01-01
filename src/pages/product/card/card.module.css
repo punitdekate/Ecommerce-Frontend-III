@@ -1,0 +1,174 @@
+.cardContainer {
+  width: 100%;
+  min-width: 95vw; /* Optional: Limit the max width if necessary */
+  max-height: 200px;
+  height: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distribute content evenly */
+  border-radius: 8px; /* Rounded corners */
+  background-color: white;
+  padding: 1rem;
+  margin: 10px 0;
+  border: 2px solid #e0e0e0; /* Subtle outer border */
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.cardContainer:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+.cardImageContainer {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the image vertically */
+  overflow: hidden; /* Ensures the image does not go outside the div */
+  position: relative;
+}
+
+.cardImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  aspect-ratio: 3/2;
+  object-fit: contain; /* Maintains aspect ratio */
+  position: absolute;
+}
+
+.cardInfoContainer {
+  flex: 4;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTitle {
+  padding: 8px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(7, 7, 208);
+  cursor: pointer; /* Add pointer cursor */
+  transition: color 0.3s ease;
+}
+
+.cardTitle:hover {
+  color: rgb(9, 9, 146); /* Change color on hover */
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #333;
+  padding: 8px 0;
+  line-height: 1.5;
+  height: 60px; /* Limit the height to avoid overflowing */
+  overflow: hidden;
+}
+
+.cardPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+  padding-top: 5px;
+}
+
+.cardButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.editContainer,
+.updateContainer {
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateProductButton,
+.deleteProductButton {
+  padding: 10px;
+  border: none;
+  background-color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.updateProductButton {
+  color: blue;
+}
+
+.deleteProductButton {
+  color: red;
+}
+
+.updateProductButton:hover {
+  color: rgb(9, 9, 146);
+}
+
+.deleteProductButton:hover {
+  color: rgb(151, 9, 9);
+}
+
+.addProductButton {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.addProductButton:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column; /* Stack the image and info container vertically */
+    width: 100%;
+    height: auto; /* Adjust height for small screens */
+  }
+
+  .cardImageContainer {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+  }
+
+  .cardInfoContainer {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem; /* Smaller title size on mobile */
+  }
+
+  .cardDescription {
+    height: auto;
+    line-height: 1.3;
+  }
+
+  .cardPrice {
+    font-size: 1.1rem;
+  }
+
+  .cardButtonContainer {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+  }
+
+  .addProductButton {
+    margin-left: 0;
+  }
+}

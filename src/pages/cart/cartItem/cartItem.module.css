@@ -1,0 +1,152 @@
+.cartItemContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px; /* Rounded corners */
+  flex-wrap: nowrap;
+  background-color: white;
+  padding: 1rem;
+  margin: 8px 0; /* Add spacing between items */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px; /* Softer shadow */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.cartItemContainer:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 12px; /* Enhance shadow on hover */
+}
+
+.cartItemImageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsContainer {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.itemImage {
+  width: 160px;
+  height: 140px;
+  object-fit: contain;
+  border: 1px solid #e0e0e0; /* Add a subtle border */
+  border-radius: 4px;
+}
+
+.itemTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.itemDescription {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.itemPrice {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.cardButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px; /* Add spacing above buttons */
+}
+
+.cardAddContainer,
+.cardMinusContainer {
+  margin: 6px;
+}
+
+.addButton,
+.removeButton {
+  background-color: rgb(17, 225, 52);
+  color: white;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  border: none;
+}
+
+.addButton:hover,
+.removeButton:hover {
+  background-color: rgb(0, 200, 50); /* Brighter green */
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+.removeButton {
+  background-color: rgb(247, 50, 50);
+}
+
+.removeButton:hover {
+  background-color: rgb(246, 118, 118);
+}
+
+.cardCountContainer {
+  padding: 0 10px;
+}
+
+.count {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.removeFromCartButton {
+  padding: 4px 14px;
+  background-color: red;
+  font-size: 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  border: none;
+}
+
+.removeFromCartButton:hover {
+  background-color: rgb(200, 0, 0); /* Darker red */
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+i {
+  padding: 4px;
+  font-size: 1rem; /* Adjust icon size */
+}
+
+@media (max-width: 768px) {
+  .cartItemContainer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+
+  .cartItemImageContainer {
+    margin-bottom: 1rem;
+  }
+
+  .detailsContainer {
+    padding-left: 0;
+  }
+
+  .cardButtonContainer {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}

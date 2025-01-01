@@ -1,0 +1,74 @@
+.homeContainer {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.filterContainer {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1.5vw;
+  gap: 10px; /* Adds spacing between buttons */
+  flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+}
+
+.filterButton {
+  font-size: 16px; /* Adjust font size for better visibility */
+  padding: 6px 12px; /* Increased padding for better clickable area */
+  background-color: azure;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin-bottom: 5px; /* Consistent margin */
+  cursor: pointer; /* Shows pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.filterButton:hover {
+  background-color: lightgreen; /* Hover effect for better user interaction */
+  border-color: darkgreen; /* Change border color on hover */
+}
+
+.filterSelect {
+  font-size: 16px; /* Matches font size of the buttons */
+  padding: 7px 12px; /* Adds padding for better appearance */
+  background-color: azure; /* Matches the background of buttons */
+  border: 2px solid green; /* Same border styling as buttons */
+  border-radius: 5px; /* Rounded corners for consistency */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  margin-left: 3px; /* Adds spacing between buttons and the dropdown */
+  margin-top: -4px;
+}
+
+.filterSelect:focus {
+  outline: none; /* Removes default focus outline */
+  border-color: darkgreen; /* Highlights border on focus */
+  box-shadow: 0 0 4px rgba(0, 128, 0, 0.5); /* Adds subtle glow effect */
+}
+
+.filterSelect:hover {
+  background-color: lightgreen; /* Changes background on hover */
+}
+
+.filterSelect option {
+  font-size: 14px; /* Consistent font size in dropdown options */
+  padding: 5px; /* Adds padding to dropdown options */
+}
+
+.activeButton {
+  background-color: lightgreen;
+  border-color: darkgreen;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .filterButton {
+    font-size: 12px; /* Smaller font size for mobile screens */
+    padding: 4px 8px; /* Adjust padding for smaller screens */
+  }
+}
