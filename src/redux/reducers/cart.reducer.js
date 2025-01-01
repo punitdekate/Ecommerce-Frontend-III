@@ -36,7 +36,7 @@ export const getInitialCart = createAsyncThunk(
       thunkApi.dispatch(start());
 
       const options = {
-        url: `http://localhost:4000/api/ecommerce/cart`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/cart`,
         maxBodyLength: Infinity,
         method: "GET",
         headers: {
@@ -71,7 +71,7 @@ export const addToCart = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/cart/${productId}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/cart/${productId}`,
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -109,7 +109,7 @@ export const removeFromCart = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/cart/${productId}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/cart/${productId}`,
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -144,7 +144,7 @@ export const opCart = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/cart/${data.productId}?op=${data.op}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/cart/${data.productId}?op=${data.op}`,
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,

@@ -39,7 +39,7 @@ export const getInitialState = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: "http://localhost:4000/api/ecommerce/products",
+        url: "https://ecommerce-backend-updated.onrender.com/api/ecommerce/products",
         method: "GET",
       };
       const response = await callApi(options, 0);
@@ -62,7 +62,7 @@ export const getFilterState = createAsyncThunk(
       // lowToHigh: false,
       // category: null,
       thunkApi.dispatch(start());
-      let url = `http://localhost:4000/api/ecommerce/products`;
+      let url = `https://ecommerce-backend-updated.onrender.com/api/ecommerce/products`;
       let filterUrl = "";
 
       if (filter.highToLow) {
@@ -102,7 +102,7 @@ export const addProduct = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: "http://localhost:4000/api/ecommerce/products",
+        url: "https://ecommerce-backend-updated.onrender.com/api/ecommerce/products",
         maxBodyLength: Infinity,
         method: "POST",
         headers: {
@@ -133,7 +133,7 @@ export const deleteProduct = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/products/${productId}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/products/${productId}`,
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -166,7 +166,7 @@ export const updateProduct = createAsyncThunk(
       const user = state.userReducer.user;
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/products/${data.id}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/products/${data.id}`,
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -196,7 +196,7 @@ export const getProduct = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: `http://localhost:4000/api/ecommerce/products/${productId}`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/products/${productId}`,
         method: "GET",
       };
       console.log(options);

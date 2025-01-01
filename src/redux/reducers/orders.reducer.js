@@ -11,7 +11,7 @@ export const getInitialOrders = createAsyncThunk(
     try {
       thunkApi.dispatch(start());
       const options = {
-        url: "http://localhost:4000/api/ecommerce/orders",
+        url: "https://ecommerce-backend-updated.onrender.com/api/ecommerce/orders",
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`,

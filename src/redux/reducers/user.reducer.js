@@ -20,7 +20,7 @@ export const userRegister = createAsyncThunk(
       const payload = { ...user, role: "customer" };
 
       const options = {
-        url: `http://localhost:4000/api/ecommerce/users`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/users`,
         method: "POST",
         data: payload,
       };
@@ -55,7 +55,7 @@ export const userLogin = createAsyncThunk(
     try {
       thunkApi.dispatch(start()); // Start loader
       const options = {
-        url: `http://localhost:4000/api/ecommerce/users/generateToken`,
+        url: `https://ecommerce-backend-updated.onrender.com/api/ecommerce/users/generateToken`,
         method: "POST",
         data: user,
       };

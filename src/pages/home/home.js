@@ -8,6 +8,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
 function Home() {
   const dispatch = useDispatch();
 
@@ -19,7 +20,7 @@ function Home() {
     category: null,
   });
 
-  /** Load the product list at intital rendering of the app */
+  /** Load the product list at initial rendering of the app */
   const loadData = async () => {
     await dispatch(getInitialState()).unwrap();
   };
@@ -29,70 +30,71 @@ function Home() {
   }, []);
 
   const handleFilter = (type) => {
+    const updatedFilter = { ...filter };
     if (type === "highToLow") {
-      setFilter({
-        highToLow: true,
-        lowToHigh: false,
-        category: filter.category,
-      });
+      updatedFilter.highToLow = true;
+      updatedFilter.lowToHigh = false;
     } else if (type === "lowToHigh") {
-      setFilter({
-        highToLow: false,
-        lowToHigh: true,
-        category: filter.category,
-      });
+      updatedFilter.highToLow = false;
+      updatedFilter.lowToHigh = true;
     }
-    dispatch(getFilterState(filter)); // Dispatch the filter state to update the product list
+
+    // Update filter state after modifying
+    setFilter(updatedFilter);
+
+    // Dispatch the updated filter state to the redux store
+    dispatch(getFilterState(updatedFilter));
   };
 
   const handleCategoryChange = (e) => {
-    setFilter({
-      ...filter,
-      category: e.target.value,
-    });
-    dispatch(getFilterState({ ...filter, category: e.target.value }));
+    const newCategory = e.target.value;
+    const updatedFilter = { ...filter, category: newCategory };
+
+    // Update category in the local state
+    setFilter(updatedFilter);
+
+    // Dispatch the updated filter state
+    dispatch(getFilterState(updatedFilter));
   };
 
   return (
-    <>
-      <div className={styles.homeContainer}>
-        <div className={styles.filterContainer}>
-          <button
-            className={`${styles.filterButton} ${
-              filter.highToLow ? styles.activeButton : ""
-            }`}
-            onClick={() => handleFilter("highToLow")}
-          >
-            High To Low <i class="fa-solid fa-sort"></i>
-          </button>
-          <button
-            className={`${styles.filterButton} ${
-              filter.lowToHigh ? styles.activeButton : ""
-            }`}
-            onClick={() => handleFilter("lowToHigh")}
-          >
-            Low To High <i class="fa-solid fa-sort"></i>
-          </button>
-          <select
-            className={`${styles.filterSelect} ${
-              filter.category ? styles.activeButton : ""
-            }`}
-            value={filter.category}
-            onChange={handleCategoryChange}
-          >
-            <option value="">Select Category</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Furniture">Furniture</option>
-          </select>
-        </div>
-        <div>
-          {products.map((product, index) => (
-            <Card product={product} key={index} />
-          ))}
-        </div>
+    <div className={styles.homeContainer}>
+      <div className={styles.filterContainer}>
+        <button
+          className={`${styles.filterButton} ${
+            filter.highToLow ? styles.activeButton : ""
+          }`}
+          onClick={() => handleFilter("highToLow")}
+        >
+          Low To High <i className="fa-solid fa-sort"></i>
+        </button>
+        <button
+          className={`${styles.filterButton} ${
+            filter.lowToHigh ? styles.activeButton : ""
+          }`}
+          onClick={() => handleFilter("lowToHigh")}
+        >
+          High To Low <i className="fa-solid fa-sort"></i>
+        </button>
+        <select
+          className={`${styles.filterSelect} ${
+            filter.category ? styles.activeButton : ""
+          }`}
+          value={filter.category}
+          onChange={handleCategoryChange}
+        >
+          <option value="">Select Category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Furniture">Furniture</option>
+        </select>
       </div>
-    </>
+      <div>
+        {products.map((product, index) => (
+          <Card product={product} key={index} />
+        ))}
+      </div>
+    </div>
   );
 }
 
